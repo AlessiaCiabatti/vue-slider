@@ -36,9 +36,14 @@
                 <div class="col-12 p-5">
                     <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel">
                         <div class="my-carousel-images">
-
-                            <div v-for="(image, indice) in images" class="my-carousel-item active">
-                                <img :class="{'active': indice === counter}" class="img-fluid" :src="image.url">
+                            
+                            <!-- :class dopo class, osserva classi css -->
+                            <div 
+                            v-for="(image, indice) in images" 
+                            class="my-carousel-item"
+                            :class="{'active': indice === counter}"  
+                            >
+                                <img class="img-fluid" :src="image.url">
                                 <div class="item-description px-3">
                                     <h2>{{ image.title }}</h2>
                                     <p>{{ image.description }}</p>
@@ -80,7 +85,7 @@
                         </div>
                         <div class="my-thumbnails position-relative">
                             <!-- prev -->
-                            <div class="my-previous position-absolute">
+                            <div @click="nextPrev(true)" class="my-previous position-absolute">
                                 <span class="my-prev-hook"></span>
                             </div>
 
@@ -105,7 +110,7 @@
                             </div>
 
                             <!-- next -->
-                            <div class="my-next position-absolute">
+                            <div @click="nextPrev(false)" class="my-next position-absolute">
                                 <span class="my-next-hook"></span>
                             </div>
                         </div>

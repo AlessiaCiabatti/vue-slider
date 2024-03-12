@@ -7,6 +7,7 @@ vue-slider
   - contatore: 0
   - applica un ciclo for al contenitore dell' immagine, da poterle ripetere
   - assegna h2 e p ad ogni immagine
+  - inserire la classe active all'img
 
 2. quando il mouse va in hover sullo slider, bloccare l’autoplay e farlo riprendere quando esce
 

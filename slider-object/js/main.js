@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
+           
             images : [
                 {
                     url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
@@ -32,8 +33,27 @@ createApp({
                     description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
                 },
             ],
-            counter: 0,
-            
+            counter: 0,            
         }
+    },
+
+    methods: {
+        nextPrev(isNext){
+            // dopo avet dato @click="nextPrev(valoreBooleano)" ai bottoni, devo dichiarare se inNext è true incremento altrimenti decremento
+            isNext ? this.counter++ : this.counter--;
+
+            if(this.counter < 0){
+                this.counter = this.images.length - 1;
+            }else if(this.counter === this.images.length){
+                this.counter = 0;
+            }
+        },
+        autoPlay(){
+            setInterval( () => this.nextPrev(true), 2000)
+        }
+    },
+
+    mounted(){
+        this.autoPlay()
     }
 }).mount('#app')
