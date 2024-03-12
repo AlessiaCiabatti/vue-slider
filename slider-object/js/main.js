@@ -33,7 +33,8 @@ createApp({
                     description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
                 },
             ],
-            counter: 0,            
+            counter: 0,
+            isPlayerActive: true,          
         }
     },
 
@@ -43,14 +44,19 @@ createApp({
             isNext ? this.counter++ : this.counter--;
 
             if(this.counter < 0){
+                // se il counter è 
                 this.counter = this.images.length - 1;
             }else if(this.counter === this.images.length){
                 this.counter = 0;
             }
         },
         autoPlay(){
-            setInterval( () => this.nextPrev(true), 2000)
-        }
+            setInterval( () => {
+                if(this.isPlayerActive){
+                    this.nextPrev(true);
+                }
+            }, 2000)
+        },
     },
 
     mounted(){
