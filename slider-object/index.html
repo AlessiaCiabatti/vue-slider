@@ -92,7 +92,12 @@
                                 <span class="my-prev-hook"></span>
                             </div>
 
-                            <div class="my-thumbnail active">
+                            <div class="my-thumbnail active"
+                            v-for="(image, indice) in images">
+                                <img class="img-fluid" :src="image.url" alt="Thumbnail of Svezia picture">
+                            </div>
+
+                            <!-- <div class="my-thumbnail">
                                 <img class="img-fluid" src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="Thumbnail of Svezia picture">
                             </div>
 
@@ -106,11 +111,7 @@
 
                             <div class="my-thumbnail">
                                 <img class="img-fluid" src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="Thumbnail of Svezia picture">
-                            </div>
-
-                            <div class="my-thumbnail">
-                                <img class="img-fluid" src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="Thumbnail of Svezia picture">
-                            </div>
+                            </div> -->
 
                             <!-- next -->
                             <div @click="nextPrev(false)" class="my-next position-absolute">

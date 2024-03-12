@@ -103,8 +103,9 @@ div#my-carousel .my-thumbnails .my-thumbnail img{
 }
 
 div#my-carousel .my-thumbnails .my-thumbnail.active{
-    filter:brightness(1);
+    /* filter:brightness(1); */
     border: 3px rgb(197, 197, 197) solid;
+    width: 100%
 }
 
 

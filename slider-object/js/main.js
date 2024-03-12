@@ -44,9 +44,10 @@ createApp({
             isNext ? this.counter++ : this.counter--;
 
             if(this.counter < 0){
-                // se il counter è 
+                // se il counter è alla prima immagine, deve tornare all'ultima img dell'array
                 this.counter = this.images.length - 1;
             }else if(this.counter === this.images.length){
+                //se il counter è all'ultima img dell'array, allora deve tornare alla prima img
                 this.counter = 0;
             }
         },
