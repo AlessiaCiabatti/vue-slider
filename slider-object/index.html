@@ -37,8 +37,8 @@
                     <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel">
                         <div class="my-carousel-images">
 
-                            <div v-for="image in images" class="my-carousel-item active">
-                                <img class="img-fluid" :src="image[counter]">
+                            <div v-for="(image, indice) in images" class="my-carousel-item active">
+                                <img :class="{'active': indice === counter}" class="img-fluid" :src="image.url">
                                 <div class="item-description px-3">
                                     <h2>{{ image.title }}</h2>
                                     <p>{{ image.description }}</p>
